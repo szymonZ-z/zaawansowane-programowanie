@@ -23,11 +23,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      
+        with:
+          fetch-depth: 0
       - name: Install Ruff
         run: pip install ruff
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ruff check . --line-length 200 --select E,W
+        run: ruff check . --line-length 200 --select E,W --exclude venv
 
