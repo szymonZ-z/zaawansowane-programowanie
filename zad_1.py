@@ -4,4 +4,4 @@ def wyswietl_imiona(imiona):
         print(imie)
 
 
-wyswietl_imiona(['Ania', 'Franek', 'Zdzisiław', 'Romek', 'Edward'])
+wyswietl_imiona(['Ania', 'Franek', 'Zdzisiław', 'Romek', 'Edward']) 
