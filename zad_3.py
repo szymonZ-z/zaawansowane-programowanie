@@ -1,5 +1,7 @@
 def parzyste(liczby):
-    for l in liczby:
-        if l%2==0:
-            print(l)
+    for liczba in liczby:
+        if liczba % 2 == 0:
+            print(liczba)
+
+
 print(parzyste(range(10)))
