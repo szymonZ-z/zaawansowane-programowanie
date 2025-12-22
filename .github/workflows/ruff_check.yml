@@ -3,11 +3,8 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
 
   push:
-      branches: ["python_basic"]
-  pull_request:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -25,10 +22,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install Ruff
-        run: pip install ruff
+      - name: Install pycodestyle
+        run: pip install pycodestyle
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: ruff check . --line-length 200 --select E,W --exclude venv
-
+      - name: Run pycodestyle
+        run: pycodestyle --max-line-length=200 --exclude=venv .
