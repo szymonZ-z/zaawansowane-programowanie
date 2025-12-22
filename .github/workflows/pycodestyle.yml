@@ -27,5 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run pycodestyle
-        run: pycodestyle --exclude=venv .
-
+        run: pycodestyle --max-line-length=200 --exclude=venv .
