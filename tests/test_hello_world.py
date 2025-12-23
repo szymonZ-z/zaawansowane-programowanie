@@ -1,5 +1,6 @@
 import zad_1
 
+
 def test_hello_world():
     client = zad_1.app.test_client()
 
