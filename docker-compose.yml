@@ -1,0 +1,29 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    volumes:
+      - ./shared:/app/shared
+      - ./shared/results:/app/results
+      - ./shared/images:/app/images
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbitmq
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    volumes:
+      - ./shared:/app/shared
+      - ./shared/results:/app/results
+      - ./shared/images:/app/images
+    depends_on:
+      - rabbitmq
