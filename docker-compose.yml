@@ -27,3 +27,8 @@ services:
       - ./shared/images:/app/images
     depends_on:
       - rabbitmq
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+      replicas: 1

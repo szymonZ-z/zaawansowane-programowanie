@@ -37,7 +37,6 @@ def update_task(task_id: str, status: str, count=None, image=None):
     tasks = _load_tasks()
 
     if task_id not in tasks:
-        # ⚠️ worker może dostać task szybciej niż API zapisze
         tasks[task_id] = {
             "status": "queued",
             "people_count": None,
